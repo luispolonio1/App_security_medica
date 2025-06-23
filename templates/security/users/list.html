@@ -55,7 +55,6 @@
                     </tbody>
                 </table>
             </div>
-
             <!-- Paginación -->
             <div class="flex justify-center mt-4">
                     <nav aria-label="Page navigation example">
@@ -84,18 +83,53 @@
                     </nav>
                 </div>
 
-            <!-- Botones -->
+                <!-- Enlaces adicionales -->
+                <div class="flex flex-col md:flex-row justify-center form-group text-center p-4">
+                    <!--{% if permissions.add_menu %}
+                    <a class="bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-full mr-0 md:mr-2 mb-2 md:mb-0 flex items-center justify-center transition-colors duration-300"
+                        href="{% url 'security:grupos_create' %}">
+                        <i class="fa-solid fa-plus mr-2"></i> Nuevo Menu
+                    </a>
+                    {% endif %}-->
+                    <a class="bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-full flex items-center justify-center transition-colors duration-300"
+                        href="{% url 'home' %}">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-{% include 'fragments/delete.html' %}
-<script>
-function openDeleteModal(id, username) {
+    {% include 'fragments/delete.html' %}
+   <script>
+function openDeleteModal(id, name) {
     const deleteForm = document.getElementById('deleteForm');
-    deleteForm.action = `{% url 'security:user_delete' 0 %}`.replace('0', id);
-    document.getElementById('Description').textContent = `ID: ${id} - ${username}`;
+    deleteForm.action = `{% url 'security:menu_delete' 0 %}`.replace('0', id);
+    document.getElementById('Description').textContent = `ID: ${id} - ${name}`;
     document.getElementById('deleteModal').classList.remove('hidden');
 }
+
+function closeModal() {
+    document.getElementById('deleteModal').classList.add('hidden');
+}
+
+// ✅ AGREGAR: Asegurar redirección correcta
+document.addEventListener('DOMContentLoaded', function() {
+    const deleteForm = document.getElementById('deleteForm');
+    
+    if (deleteForm) {
+        deleteForm.addEventListener('submit', function(e) {
+            // Opcional: Mostrar loading
+            const submitBtn = deleteForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Eliminando...';
+                submitBtn.disabled = true;
+            }
+            
+            // Permitir envío normal del formulario
+            // Django manejará la redirección automáticamente
+        });
+    }
+});
 </script>
 {% endblock %}

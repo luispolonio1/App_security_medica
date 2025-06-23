@@ -17,11 +17,7 @@ class GroupListView(PermissionMixin, ListViewMixin, ListView):
 class GroupCreateView(PermissionMixin, CreateViewMixin, CreateView):
     model = Group
     form_class = GroupForm
-<<<<<<< HEAD
-    template_name = "security/grupos/create.html"
-=======
     template_name = "security/grupos/form.html"
->>>>>>> origin/main
     success_url = reverse_lazy("security:grupos_list")
     permission_required = "security.add_group"
 
@@ -32,11 +28,7 @@ class GroupCreateView(PermissionMixin, CreateViewMixin, CreateView):
 class GroupUpdateView(PermissionMixin, UpdateViewMixin, UpdateView):
     model = Group
     form_class = GroupForm
-<<<<<<< HEAD
-    template_name = "security/grupos/update.html"
-=======
     template_name = "security/grupos/form.html"
->>>>>>> origin/main
     success_url = reverse_lazy("security:grupos_list")
     permission_required = "security.change_group"
 
@@ -52,8 +44,4 @@ class GroupDeleteView(PermissionMixin, DeleteViewMixin, DeleteView):
 
     def form_valid(self, form):
         messages.success(self.request, "Grupo eliminado exitosamente.")
-<<<<<<< HEAD
         return super().form_valid(form)
-=======
-        return super().form_valid(form)
->>>>>>> origin/main
