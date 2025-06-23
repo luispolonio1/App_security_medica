@@ -3,6 +3,9 @@ from django.urls import path
 from applications.security.views.auth import signin, signout, signup
 from applications.security.views.menu import MenuCreateView, MenuDeleteView, MenuListView, MenuUpdateView
 from applications.security.views.module import ModuleCreateView, ModuleDeleteView, ModuleListView, ModuleUpdateView
+from applications.security.views.users import UserListView, UserUpdateView, UserDeleteView
+from applications.security.views.grupos import GroupListView, GroupCreateView, GroupUpdateView, GroupDeleteView
+
 
 
 app_name='security' # define un espacio de nombre para la aplicacion
@@ -24,4 +27,16 @@ urlpatterns = [
   path('logout/', signout, name='signout'),
   path('signin/', signin, name='signin'),
   path('signup/', signup, name='signup'),
+
+  # rutas de usuarios
+  path('users/', UserListView.as_view(), name='user_list'),
+  path('users_update/<int:pk>/', UserUpdateView.as_view(), name='user_update'),
+  path('users_delete/<int:pk>/', UserDeleteView.as_view(), name='user_delete'),
+
+  # rutas de grupos
+  path('grupos_list/', GroupListView.as_view(), name='grupos_list'),   
+  path('grupos_create/', GroupCreateView.as_view(), name='grupos_create'),
+  path('grupos_update/<int:pk>/', GroupUpdateView.as_view(), name='grupos_update'),
+  path('grupos_delete/<int:pk>/', GroupDeleteView.as_view(), name='grupos_delete'),
+  
 ]

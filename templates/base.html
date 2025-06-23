@@ -114,10 +114,12 @@
                     {% else %}
                         <!-- Login Button -->
                         <a href="{% url 'security:signin' %}" class="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium px-6 py-2 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                            </svg>
+                            <i class="fas fa-sign-in-alt w-4 h-4"></i>
                             <span>Iniciar Sesión</span>
+                        </a>
+                        <a href="{% url 'security:signup' %}" class="flex items-center space-x-2 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-700 hover:to-green-700 text-white font-medium px-6 py-2 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-user-plus w-4 h-4"></i>
+                            <span>Registrarse</span>
                         </a>
                     {% endif %}
                 </div>
