@@ -67,3 +67,11 @@ def signup(request):
     else:
         form = CustomUserCreationForm()
         return render(request, "security/auth/signup.html", {"form": form, **data})
+
+
+# grupos = {
+#     "Administrador": 1,
+#     "Gerente": 2,
+#     "Vendedor": 3,
+#     "Cliente": 4
+# }
