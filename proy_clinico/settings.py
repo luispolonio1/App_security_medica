@@ -97,7 +97,10 @@ WSGI_APPLICATION = 'proy_clinico.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -149,4 +152,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 try:
     from .local_settings import *
 except ImportError:
+<<<<<<< HEAD
     pass
+=======
+    pass
+>>>>>>> origin/main

@@ -825,9 +825,12 @@
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
+<<<<<<< HEAD
   .bg-gray-500 {
     background-color: var(--color-gray-500);
   }
+=======
+>>>>>>> origin/main
   .bg-green-50 {
     background-color: var(--color-green-50);
   }
