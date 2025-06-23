@@ -97,16 +97,6 @@ WSGI_APPLICATION = 'proy_clinico.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Medicos',
-        'USER': 'postgres',
-        'PASSWORD': '2002',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -154,3 +144,8 @@ LOGIN_URL = '/security/signin/'
 # SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass

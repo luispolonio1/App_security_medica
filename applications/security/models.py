@@ -11,7 +11,7 @@ Modelo Menu: Representa las categorías principales de navegación del sistema.
 Cada menú agrupa varios módulos relacionados funcionalmente.
 
 Ejemplos:
-1. Ventas (icon: bi bi-cart, order: 1) - Agrupa módulos de clientes, facturación, cotizaciones
+1. Ventas (icon: bi bi-cart, order: 1) - Agrupa módulos de clientes, facturación, cotizaciones6
 2. Inventario (icon: bi bi-box, order: 2) - Agrupa módulos de productos, stock, transferencias
 3. Finanzas (icon: bi bi-cash-coin, order: 3) - Agrupa módulos financieros
 """
